@@ -27,9 +27,9 @@ jobs:
         run: |
           npm install -g javascript-obfuscator
 
-      - name: Clone BPB workjs
+      - name: Download latest BPB worker js
         run: |
-          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
+          wget -O origin.js https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.js
 
       - name: Obfuscate BPB worker js
         run: |

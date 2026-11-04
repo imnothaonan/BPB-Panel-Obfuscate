@@ -6,7 +6,7 @@
 
 `.github/workflows/Obfuscate.yml` 每天 01:00 UTC（北京时间 09:00）以及每次向 `main` 分支推送时自动执行：
 
-1. 拉取上游 `build/unobfuscated-worker.js`
+1. 拉取上游 release 产物 `worker.js`（`releases/latest/download/worker.js`）
 2. 用 `javascript-obfuscator` 做高强度混淆（控制流平坦化、死代码注入、RC4 字符串数组、十六进制标识符等）
 3. 把产物 `_worker.js` 自动提交回 `main`
 
