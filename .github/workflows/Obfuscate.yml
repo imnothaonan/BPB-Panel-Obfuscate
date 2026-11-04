@@ -28,9 +28,11 @@ jobs:
         run: |
           npm install -g javascript-obfuscator
 
-      - name: Download latest BPB worker js
+      # 锁定 v4.2.3：v5 起上游禁止手动部署（仅支持 BPB Wizard 安装），
+      # 手动贴代码到 Cloudflare 只能用 v4 线，且 v4.2.3 是最后一个 v4 版本。
+      - name: Download BPB worker js (v4.2.3)
         run: |
-          wget -O origin.js https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/latest/download/worker.js
+          wget -O origin.js https://github.com/bia-pain-bache/BPB-Worker-Panel/releases/download/v4.2.3/worker.js
 
       - name: Obfuscate BPB worker js
         run: |
