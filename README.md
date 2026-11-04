@@ -8,7 +8,9 @@
 
 1. 拉取上游 release 产物 `worker.js`（`releases/latest/download/worker.js`）
 2. 用 `javascript-obfuscator` 做高强度混淆（控制流平坦化、死代码注入、RC4 字符串数组、十六进制标识符等）
-3. 把产物 `_worker.js` 自动提交回 `main`
+3. 把 `origin.js`（未混淆原件）和 `_worker.js`（混淆产物）一起自动提交回 `main`
+
+> `origin.js` 是上游 release 里已构建好的 worker 产物（约 400KB），不是 `src/` 下的 TypeScript 源码。
 
 ## 使用
 
